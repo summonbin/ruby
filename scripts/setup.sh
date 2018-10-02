@@ -19,11 +19,11 @@ TARGET_RUBY_VERSION=$2
 #### Read config ####
 #####################
 
-RBENV_CACHE_DIR=$(<"$CONFIG_DIR/rbenv/cache")
+RBENV_CACHE_DIR=$( eval "echo $(<"$CONFIG_DIR/rbenv/cache")" )
 RBENV_VERSION=$(<"$CONFIG_DIR/rbenv/version")
-BUNDLER_CACHE_DIR=$(<"$CONFIG_DIR/bundler/cache")
+BUNDLER_CACHE_DIR=$( eval "echo $(<"$CONFIG_DIR/bundler/cache")" )
 BUNDLER_VERSION=$(<"$CONFIG_DIR/bundler/version")
-GEM_CACHE_DIR=$(<"$CONFIG_DIR/gem/cache")
+GEM_CACHE_DIR=$( eval "echo $(<"$CONFIG_DIR/gem/cache")" )
 
 
 ##############################
