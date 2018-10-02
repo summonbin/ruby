@@ -10,6 +10,7 @@ BASE_URL="https://raw.githubusercontent.com/summonbin/ruby"
 
 INSTALL_PATH=$1
 SCHEME_PATH=$2
+DEFAULT_CACHE_PATH=$3
 
 
 ######################
@@ -27,12 +28,27 @@ curl -L "$BASE_URL/$VERSION/scripts/run.sh" -o "$INSTALL_PATH/$DRIVER_NAME/run.s
 ######################
 
 mkdir -p $SCHEME_PATH/$DRIVER_NAME/rbenv
-echo "$INSTALL_PATH/cache/$DRIVER_NAME/rbenv" > $SCHEME_PATH/$DRIVER_NAME/rbenv/cache
-echo "v1.1.1" > $SCHEME_PATH/$DRIVER_NAME/rbenv/version
+if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/rbenv/cache" ]
+then
+  echo "$DEFAULT_CACHE_PATH/$DRIVER_NAME/rbenv" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/cache"
+fi
+if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/rbenv/version" ]
+then
+  echo "v1.1.1" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/version"
+fi
 
 mkdir -p $SCHEME_PATH/$DRIVER_NAME/bundler
-echo "$INSTALL_PATH/cache/$DRIVER_NAME/bundler" > $SCHEME_PATH/$DRIVER_NAME/bundler/cache
-echo "v1.16.2" > $SCHEME_PATH/$DRIVER_NAME/bundler/version
+if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/bundler/cache" ]
+then
+  echo "$DEFAULT_CACHE_PATH/$DRIVER_NAME/bundler" > "$SCHEME_PATH/$DRIVER_NAME/bundler/cache"
+fi
+if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/bundler/version" ]
+then
+  echo "v1.16.2" > "$SCHEME_PATH/$DRIVER_NAME/bundler/version"
+fi
 
 mkdir -p $SCHEME_PATH/$DRIVER_NAME/gem
-echo "$INSTALL_PATH/cache/$DRIVER_NAME/gem" > $SCHEME_PATH/$DRIVER_NAME/gem/cache
+if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/gem/cache" ]
+then
+  echo "$DEFAULT_CACHE_PATH/$DRIVER_NAME/gem" > "$SCHEME_PATH/$DRIVER_NAME/gem/cache"
+fi
