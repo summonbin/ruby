@@ -1,6 +1,6 @@
 #!/bin/sh
 DRIVER_NAME="ruby"
-VERSION="0.1.0"
+VERSION="0.1.1"
 BASE_URL="https://raw.githubusercontent.com/summonbin/ruby"
 
 
