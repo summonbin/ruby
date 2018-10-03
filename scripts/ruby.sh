@@ -18,7 +18,7 @@ BIN_ARGS=${BIN_ARGS[@]}
 #### Setup Ruby ####
 ####################
 
-source $BASE_DIR/setup.sh $CONFIG_DIR $TARGET_RUBY_VERSION
+source "$BASE_DIR/setup.sh" "$CONFIG_DIR" "$TARGET_RUBY_VERSION"
 
 
 ######################
