@@ -1,6 +1,6 @@
 #!/bin/sh
 DRIVER_NAME="ruby"
-VERSION="0.1.1"
+VERSION="0.1.2"
 BASE_URL="https://raw.githubusercontent.com/summonbin/ruby"
 
 
@@ -34,7 +34,7 @@ then
 fi
 if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/rbenv/version" ]
 then
-  echo "v1.1.1" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/version"
+  echo "v1.1.2" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/version"
 fi
 
 mkdir -p "$SCHEME_PATH/$DRIVER_NAME/bundler"
@@ -44,7 +44,7 @@ then
 fi
 if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/bundler/version" ]
 then
-  echo "v1.16.2" > "$SCHEME_PATH/$DRIVER_NAME/bundler/version"
+  echo "v2.0.1" > "$SCHEME_PATH/$DRIVER_NAME/bundler/version"
 fi
 
 mkdir -p "$SCHEME_PATH/$DRIVER_NAME/gem"
