@@ -44,7 +44,7 @@ then
 fi
 if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/bundler/version" ]
 then
-  echo "v1.16.2" > "$SCHEME_PATH/$DRIVER_NAME/bundler/version"
+  echo "v2.0.1" > "$SCHEME_PATH/$DRIVER_NAME/bundler/version"
 fi
 
 mkdir -p "$SCHEME_PATH/$DRIVER_NAME/gem"
