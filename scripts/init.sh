@@ -34,7 +34,7 @@ then
 fi
 if [ ! -f "$SCHEME_PATH/$DRIVER_NAME/rbenv/version" ]
 then
-  echo "v1.1.1" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/version"
+  echo "v1.1.2" > "$SCHEME_PATH/$DRIVER_NAME/rbenv/version"
 fi
 
 mkdir -p "$SCHEME_PATH/$DRIVER_NAME/bundler"
