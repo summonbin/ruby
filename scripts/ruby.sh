@@ -33,7 +33,7 @@ source "$BASE_DIR/setup.sh" "$CONFIG_DIR" "$TARGET_RUBY_VERSION"
 
 if [ -t 1 ]
 then
-  ruby $BIN_ARGS < /dev/tty
+  eval ruby $BIN_ARGS < /dev/tty
 else
-  ruby $BIN_ARGS
+  eval ruby $BIN_ARGS
 fi

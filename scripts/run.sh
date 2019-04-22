@@ -36,7 +36,7 @@ source "$BASE_DIR/setup.sh" "$CONFIG_DIR" "$TARGET_RUBY_VERSION"
 bundle install
 if [ -t 1 ]
 then
-  bundle exec $BIN_NAME $BIN_ARGS < /dev/tty
+  eval bundle exec $BIN_NAME $BIN_ARGS < /dev/tty
 else
-  bundle exec $BIN_NAME $BIN_ARGS
+  eval bundle exec $BIN_NAME $BIN_ARGS
 fi
