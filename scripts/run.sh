@@ -9,7 +9,13 @@ BIN_NAME=$2
 TARGET_RUBY_VERSION=$3
 
 # Arguments for bin
-BIN_ARGS=("$@")
+BIN_ARGS=()
+
+for i
+do
+  BIN_ARGS+=(\"${i}\")
+done
+
 unset BIN_ARGS[0]
 unset BIN_ARGS[1]
 unset BIN_ARGS[2]
@@ -30,7 +36,7 @@ source "$BASE_DIR/setup.sh" "$CONFIG_DIR" "$TARGET_RUBY_VERSION"
 bundle install
 if [ -t 1 ]
 then
-  bundle exec $BIN_NAME $BIN_ARGS < /dev/tty
+  eval bundle exec $BIN_NAME $BIN_ARGS < /dev/tty
 else
-  bundle exec $BIN_NAME $BIN_ARGS
+  eval bundle exec $BIN_NAME $BIN_ARGS
 fi
