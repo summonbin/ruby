@@ -9,7 +9,13 @@ BIN_NAME=$2
 TARGET_RUBY_VERSION=$3
 
 # Arguments for bin
-BIN_ARGS=("$@")
+BIN_ARGS=()
+
+for i
+do
+  BIN_ARGS+=(\"${i}\")
+done
+
 unset BIN_ARGS[0]
 unset BIN_ARGS[1]
 unset BIN_ARGS[2]
